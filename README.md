@@ -1,6 +1,6 @@
 Dotfiles
 =========
 
-For my dotfiles and stuff.
+For my dotfiles and various config files. 
 
 
