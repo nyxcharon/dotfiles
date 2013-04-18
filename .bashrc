@@ -127,4 +127,4 @@ alias tnode='ssh -AX tnode001'
 alias lsa='ls -lisa'
 alias lds='ldapsearch -xLLL' 
 alias keys='sh /cloudhome/bmartin4/scripts/keys.sh'
-
+alias e='emacs -nw'
