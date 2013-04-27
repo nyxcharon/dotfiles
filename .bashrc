@@ -120,7 +120,7 @@ EDITOR=emacs
 DEBEMAIL=bobby.martin@mail.wvu.edu
 DEBEDITOR=emacs
 DEBFULLNAME="Bobby Martin"
-
+JAVA_HOME=/usr/lib/jvm/default-java
 
 alias shell='ssh -p 20110 bmartin4@shell.lcsee.wvu.edu'
 alias tnode='ssh -AX tnode001'
