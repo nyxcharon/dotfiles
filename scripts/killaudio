@@ -1,0 +1,25 @@
+#! /bin/bash
+
+usage() {
+    cat <<EOF
+Usage: ${0}  killaudio machine-number
+Kills audio on a cseesystem linux machine
+EOF
+}
+
+if [ $# -ne 1 ]
+then
+    usage
+    exit
+fi
+
+
+if [ "${1}" = "--help" -o "${1}" = "-h" ]; then
+    usage
+    exit
+fi
+
+
+ssh -A cseesystems${1} "sudo killall pulseaudio"
+
+exit 0

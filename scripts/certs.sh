@@ -15,8 +15,15 @@ then
     exit 1
 fi
 
-#SSH -A $USER@$1 "mkdir -p /tmp/certs &"
-#scp /home/bmartin4/certs/* $1:/tmp/certs
-#ssh -A $USER@$1 "sudo cp /tmp/certs/* /etc/ssl/certs "
+WEBSERVER=www002
+#ssh to a webserver and tar certs, scp to tnode
+scp harvest.sh $USER@$WEBSERVER:~/ 
+ssh -A $USER@$WEBSERVER "./harvest.sh"
+
+#scp files to test machine, exract, put in place
+scp ~/certs.tar.gz $USER@$1:~/
+ssh -A $USER@$1 "tar -xvzf certs.tar.gz &"
+ssh -A $USER@$1 "sudo cp /tmp/certs/* /etc/ssl/certs &"
 
 exit 0
+
