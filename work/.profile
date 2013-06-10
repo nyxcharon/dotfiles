@@ -72,3 +72,8 @@ gsettings set com.canonical.Unity.Launcher favorites "['ubiquity-gtkui.desktop',
 #Command used to recompile the schema change for the Unity launcher change, and to set workspaces
 glib-compile-schemas /usr/share/glib-2.0/schemas/
 
+GIT=`git --version`
+if [ $? -eq 0 ]; then
+    git config --global user.email "nyxcharon@gmail.com"
+    git config --global user.name "Bobby Martin"
+fi
