@@ -1,0 +1,12 @@
+AddHandler cgi-script .cgi .pl
+<VirtualHost *:80>
+	ServerName www.bugzilla.acheronstudios.com
+	ServerAlias bugzilla.acheronstudios.com
+	ServerAdmin admin@acheronstudios.com
+	
+	<Directory /usr/share/bugzilla3/web/>
+	 Allow from all
+	</Directory>
+
+	DocumentRoot /usr/share/bugzilla3/web
+</VirtualHost>

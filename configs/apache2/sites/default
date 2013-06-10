@@ -1,0 +1,16 @@
+<VirtualHost *:80>
+	ServerName compile-it.org
+	ServerAlias compile-it.org
+	ServerAdmin admin@compile-it.org
+	DocumentRoot /var/www/compile-it.org
+
+
+
+	<FilesMatch 'awstats.pl'>	
+	AuthName 'Login Required'
+	AuthType Basic
+	AuthUserFile /path/to/file
+	require valid-user
+	</FilesMatch>
+
+</VirtualHost>

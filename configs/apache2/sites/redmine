@@ -1,0 +1,16 @@
+<VirtualHost *:80>
+    DocumentRoot /var/www/redmine
+    ServerName projects.acheronstudios.com
+
+    #RewriteEngine on
+    #RewriteRule   ^/$  /redmine  [R]
+
+    <Directory /var/www/redmine>
+            RailsBaseURI /redmine
+            PassengerResolveSymlinksInDocumentRoot on
+    </Directory>
+
+    ErrorLog /var/log/apache2/error.log
+    LogLevel warn
+    CustomLog /var/log/apache2/access.log combined
+</VirtualHost>
