@@ -118,7 +118,7 @@ unset sq_color
 
 export EDITOR=emacs
 export DEBEMAIL=bobby.martin@mail.wvu.edu
-export DEBEDITOR=emacs
+export DEBEDITOR='emacs -nw'
 export DEBFULLNAME="Bobby Martin"
 
 
@@ -133,10 +133,6 @@ alias frank='sh /cloudhome/bmartin4/scripts/killaudio.sh'
 alias emacs='emacs -nw'
 alias netbeans='bash /cloudhome/bmartin4/netbeans/netbeans-7.3/bin/netbeans &'
 alias "loud-deploy"='unset DISPLAY && loud-deploy'
-
-if ! [ -h /home/${USER}/.purple ]; then
-    ln -s /cloudhome/${USER}/.purple /home/${USER}/.purple
-fi
-
+alias lco='unset DISPLAY && lco'
 #alias shutup='osascript -e 'set volume 0''
-#ln -s /cloudhome/bmartin4/.purple ~/.purple&
+

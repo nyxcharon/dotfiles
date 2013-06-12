@@ -75,5 +75,9 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/
 GIT=`git --version`
 if [ $? -eq 0 ]; then
     git config --global user.email "nyxcharon@gmail.com"
-    git config --global user.name "Bobby Martin"
+    git config --global user.name "nyxcharon"
+fi
+
+if ! [ -h /home/${USER}/.purple ]; then
+    ln -s /cloudhome/${USER}/.purple /home/${USER}/.purple
 fi
