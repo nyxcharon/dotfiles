@@ -47,6 +47,17 @@
       AuthUserFile /path/to/file 
       Require valid-user
       </Location>
+      <Location /eos>
+      DAV svn
+      SVNPath /var/svn/eos/
+      order allow,deny
+      Satisfy Any
+      AuthType Basic
+      AuthName "Subversion"
+      AuthUserFile /path/to/file 
+      Require valid-user
+      </Location>
+
 
  ErrorLog /var/log/apache2/error.log
 
