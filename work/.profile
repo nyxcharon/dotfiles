@@ -31,7 +31,7 @@ fi
 ## set background
 result=`pgrep X`
 if [ $? -eq 0 ]; then 
-    gsettings set org.gnome.desktop.background picture-uri file:///cloudhome/${USER}/startup/back.jpg
+    gsettings set org.gnome.desktop.background picture-uri file:///cloudhome/${USER}/startup/back.png
     dconf write /org/compiz/profiles/unity/plugins/unityshell/icon-size 26
     if [ -d ~/.gconf ]; then 
 	rm -rf ~/.gconf
@@ -60,7 +60,9 @@ fi
 
 
 
+hostname=`echo ${HOSTNAME} | tr '[A-Z]' '[a-z]'`
 
+ if [[ `echo $hostname`  == cseesystems* ]]; then
 #Move netbeans files into place
 sudo cp /cloudhome/bmartin4/netbeans/launcher/netbeans.desktop /usr/share/applications
 sudo cp -r /cloudhome/bmartin4/netbeans/launcher/* /usr/share/icons/hicolor
@@ -71,6 +73,8 @@ gsettings set com.canonical.Unity.Launcher favorites "['ubiquity-gtkui.desktop',
 
 #Command used to recompile the schema change for the Unity launcher change, and to set workspaces
 glib-compile-schemas /usr/share/glib-2.0/schemas/
+
+fi
 
 GIT=`git --version`
 if [ $? -eq 0 ]; then
