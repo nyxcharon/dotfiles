@@ -134,5 +134,6 @@ alias emacs='emacs -nw'
 alias netbeans='bash /cloudhome/bmartin4/netbeans/netbeans-7.3/bin/netbeans &'
 alias "loud-deploy"='unset DISPLAY && loud-deploy'
 alias lco='unset DISPLAY && lco'
+alias clean=' find `pwd` -iname "*~" -or -name "*#" |xargs rm -f'
 #alias shutup='osascript -e 'set volume 0''
 
