@@ -116,7 +116,7 @@ PS1="$sq_color\342\224\214\342\224\200\$([[ \$? != 0 ]] && echo \"[\[\033[01;37m
 
 unset sq_color
 
-export EDITOR=emacs
+export EDITOR='emacs -nw'
 export DEBEMAIL=bobby.martin@mail.wvu.edu
 export DEBEDITOR='emacs -nw'
 export DEBFULLNAME="Bobby Martin"
