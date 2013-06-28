@@ -62,7 +62,7 @@ fi
 
 hostname=`echo ${HOSTNAME} | tr '[A-Z]' '[a-z]'`
 
- if [[ `echo $hostname`  == cseesystems* ]]; then
+ if [[ echo $hostname | grep -q "cseesystems" ]]; then
 #Move netbeans files into place
 sudo cp /cloudhome/bmartin4/netbeans/launcher/netbeans.desktop /usr/share/applications
 sudo cp -r /cloudhome/bmartin4/netbeans/launcher/* /usr/share/icons/hicolor
