@@ -26,42 +26,32 @@
       SVNListParentPath on
       AuthType Basic
       AuthName "Subversion Repository"
-      AuthUserFile /etc/apace2/dav_svn.passwd 
+      AuthUserFile /some/path
       Require valid-user
       </Location>
 	      
-      <Location /compileit>
+      <Location /repo1>
       DAV svn
-      SVNPath /var/svn/compileit/
+      SVNPath /var/svn/repo1/
       order allow,deny
       Satisfy Any
       AuthType Basic
       AuthName "Subversion"
-      AuthUserFile /etc/apache2/dav_svn.passwd 
+      AuthUserFile /some/path
       Require valid-user
       </Location>
 
-      <Location /erebos>
+      <Location /repo2>
       DAV svn
-      SVNPath /var/svn/erebos/
+      SVNPath /var/svn/repo2/
       order allow,deny
       Satisfy Any
       AuthType Basic
-      AuthName "Erebos Subversion"
-      AuthUserFile /etc/apache2/dav_svn.passwd 
+      AuthName "Subversion"
+      AuthUserFile /some/path
       Require valid-user
       </Location>
 
-      <Location /eos>
-      DAV svn
-      SVNPath /var/svn/eos/
-      order allow,deny
-      Satisfy Any
-      AuthType Basic
-      AuthName "Embers of Solace Subversion"
-      AuthUserFile /etc/apache2/embers.passwd 
-      Require valid-user
-      </Location>
       ErrorLog /var/log/apache2/error.log
       LogLevel warn
       CustomLog /var/log/apache2/access.log combined
