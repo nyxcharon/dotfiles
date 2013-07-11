@@ -44,6 +44,15 @@ if ! [ -h /home/${USER}/cloud ]; then
     ln -s /cloudhome/${USER}/ /home/${USER}/cloud
 fi
 
+##Emacs stuff
+if ! [ -h /home/${USER}/.emacs.d ]; then
+    cp -r /cloudhome/${USER}/.emacs.d
+fi
+if ! [ -h /home/${USER}/.emacs ]; then
+    cp -r /cloudhome/${USER}/.emacs
+fi
+
+
 ## remove useless files
 if [ -f /home/${USER}/Desktop/README.nohome ]; then
     rm /home/${USER}/Desktop/README.nohome
