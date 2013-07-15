@@ -33,11 +33,7 @@ result=`pgrep X`
 if [ $? -eq 0 ]; then 
     gsettings set org.gnome.desktop.background picture-uri file:///cloudhome/${USER}/startup/back.png
     dconf write /org/compiz/profiles/unity/plugins/unityshell/icon-size 26
-    if [ -d ~/.gconf ]; then 
-	rm -rf ~/.gconf
-    fi
-    ln -s /cloudhome/${USER}/.gconf ~/
-fi
+   fi
 
 ## create link to /cloudhome
 if ! [ -h /home/${USER}/cloud ]; then
@@ -46,10 +42,10 @@ fi
 
 ##Emacs stuff
 if ! [ -h /home/${USER}/.emacs.d ]; then
-    cp -r /cloudhome/${USER}/.emacs.d
+    cp -r /cloudhome/${USER}/.emacs.d ~/
 fi
 if ! [ -h /home/${USER}/.emacs ]; then
-    cp -r /cloudhome/${USER}/.emacs
+    cp -r /cloudhome/${USER}/.emacs ~/
 fi
 
 
@@ -71,7 +67,7 @@ fi
 
 hostname=`echo ${HOSTNAME} | tr '[A-Z]' '[a-z]'`
 
- if [[ echo $hostname | grep -q "cseesystems" ]]; then
+if [[ $hostname == cseesystems* ]]; then
 #Move netbeans files into place
 sudo cp /cloudhome/bmartin4/netbeans/launcher/netbeans.desktop /usr/share/applications
 sudo cp -r /cloudhome/bmartin4/netbeans/launcher/* /usr/share/icons/hicolor
@@ -81,7 +77,7 @@ sudo cp -r /cloudhome/bmartin4/netbeans/launcher/* /usr/share/icons/hicolor
 gsettings set com.canonical.Unity.Launcher favorites "['ubiquity-gtkui.desktop', 'nautilus-home.desktop', 'chromium-browser.desktop', 'gnome-terminal.desktop', 'pidgin.desktop','netbeans.desktop']"
 
 #Command used to recompile the schema change for the Unity launcher change, and to set workspaces
-glib-compile-schemas /usr/share/glib-2.0/schemas/
+sudo glib-compile-schemas /usr/share/glib-2.0/schemas/
 
 fi
 
