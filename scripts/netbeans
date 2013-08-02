@@ -1,0 +1,16 @@
+#! /bin/bash
+
+#Copy netbeans into place
+if [ ! -d "/home/bmartin4/netbeans" ]; then
+  echo "First run - Copying files into place"
+  cp -r /cloudhome/bmartin4/netbeans/netbeans ~/
+fi
+
+#Make sure the project folder is simlinked to cloudhome
+if ! [ -h /home/${USER}/NetBeansProjects ]; then
+    echo "No project folder found, symlinking to cloud"
+    ln -s /cloudhome/bmartin4/netbeans/NetBeansProjects /home/bmartin4/NetBeansProjects
+fi
+
+#launch netbeans
+bash /home/bmartin4/netbeans/bin/netbeans &

@@ -116,7 +116,7 @@ PS1="$sq_color\342\224\214\342\224\200\$([[ \$? != 0 ]] && echo \"[\[\033[01;37m
 
 unset sq_color
 
-export EDITOR='emacs -nw'
+export EDITOR=emacs
 export DEBEMAIL=bobby.martin@mail.wvu.edu
 export DEBEDITOR='emacs -nw'
 export DEBFULLNAME="Bobby Martin"
@@ -131,9 +131,9 @@ alias cloud='cd /cloudhome/bmartin4'
 alias e='emacs -nw'
 alias frank='sh /cloudhome/bmartin4/scripts/killaudio.sh'
 alias emacs='emacs -nw'
-alias netbeans='bash /cloudhome/bmartin4/netbeans/netbeans-7.3/bin/netbeans &'
+alias netbeans='bash /cloudhome/bmartin4/scripts/netbeans'
 alias "loud-deploy"='unset DISPLAY && loud-deploy'
 alias lco='unset DISPLAY && lco'
 alias clean=' find `pwd` -iname "*~" -or -name "*#" |xargs rm -f'
 #alias shutup='osascript -e 'set volume 0''
-
+alias squid=squid001.lcsee.wvu.edu:3128
