@@ -135,5 +135,7 @@ alias netbeans='bash /cloudhome/bmartin4/scripts/netbeans'
 alias "loud-deploy"='unset DISPLAY && loud-deploy'
 alias lco='unset DISPLAY && lco'
 alias clean=' find `pwd` -iname "*~" -or -name "*#" |xargs rm -f'
+alias nolock='gsettings set org.gnome.desktop.screensaver lock-enabled false'
 #alias shutup='osascript -e 'set volume 0''
 alias squid=squid001.lcsee.wvu.edu:3128
+alias ad-search="ldapsearch -xLL -h adbalanced.wvu.edu -b dc=wvu-ad,dc=wvu,dc=edu -D bmartin4@wvu-ad.wvu.edu -W" #samaccountname=myid
