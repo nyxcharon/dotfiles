@@ -121,14 +121,12 @@ export DEBEMAIL=bobby.martin@mail.wvu.edu
 export DEBEDITOR='emacs -nw'
 export DEBFULLNAME="Bobby Martin"
 
-
 alias shell='ssh -p 20110 bmartin4@shell.lcsee.wvu.edu'
 alias tnode='ssh -AX tnode001'
 alias lsa='ls -lisa'
 alias lds='ldapsearch -xLLL' 
 alias keys='sh /cloudhome/bmartin4/scripts/rkeys.sh'
 alias cloud='cd /cloudhome/bmartin4'
-alias e='emacs -nw'
 alias frank='sh /cloudhome/bmartin4/scripts/killaudio.sh'
 alias emacs='emacs -nw'
 alias netbeans='bash /cloudhome/bmartin4/scripts/netbeans'

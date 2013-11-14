@@ -31,14 +31,20 @@ fi
 ## set background
 result=`pgrep X`
 if [ $? -eq 0 ]; then 
-    gsettings set org.gnome.desktop.background picture-uri file:///cloudhome/${USER}/startup/back.png
-    dconf write /org/compiz/profiles/unity/plugins/unityshell/icon-size 26
+    gsettings set org.gnome.desktop.background picture-uri file:///cloudhome/${USER}/startup/back.png 2>&1 >/dev/null 
+    dconf write /org/compiz/profiles/unity/plugins/unityshell/icon-size 26 2>&1 >/dev/null 
    fi
 
 ## create link to /cloudhome
 if ! [ -h /home/${USER}/cloud ]; then
     ln -s /cloudhome/${USER}/ /home/${USER}/cloud
 fi
+
+## link to .config dir
+if ! [ -h /home/${USER}/.config ]; then
+    ln -s /cloudhome/${USER}/ /home/${USER}/.config
+fi
+ 
 
 ##Emacs stuff
 if ! [ -h /home/${USER}/.emacs.d ]; then
@@ -74,10 +80,9 @@ sudo cp -r /cloudhome/bmartin4/netbeans/launcher/* /usr/share/icons/hicolor
 
 
 # Locally set unity launcher
-gsettings set com.canonical.Unity.Launcher favorites "['ubiquity-gtkui.desktop', 'nautilus-home.desktop', 'chromium-browser.desktop', 'gnome-terminal.desktop', 'pidgin.desktop','netbeans.desktop']"
-
+gsettings set com.canonical.Unity.Launcher favorites "['ubiquity-gtkui.desktop', 'nautilus-home.desktop', 'chromium-browser.desktop', 'gnome-terminal.desktop', 'pidgin.desktop','netbeans.desktop']" 2>&1 >/dev/null 
 #Command used to recompile the schema change for the Unity launcher change, and to set workspaces
-sudo glib-compile-schemas /usr/share/glib-2.0/schemas/
+sudo glib-compile-schemas /usr/share/glib-2.0/schemas/ &> /dev/null
 
 fi
 
