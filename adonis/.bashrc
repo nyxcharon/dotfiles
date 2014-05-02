@@ -106,15 +106,10 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-if [[ ${EUID} == 0 ]] ; then
-    sq_color="\[\033[0;31m\]"
-else
-    sq_color="\[\033[0;34m\]"
-    fi
+export PS1="\[$(tput setaf 7)\][\[$(tput setaf 1)\]\u\[$(tput setaf 4)\]@\[$(tput setaf 2)\]\h \[$(tput setaf 5)\]\W\[$(tput setaf 7)\]]\[$(tput setaf 1)\]$ \[$(tput sgr0)\]"
 
-PS1="$sq_color\342\224\214\342\224\200\$([[ \$? != 0 ]] && echo \"[\[\033[01;37m\]\342\234\227$sq_color]\342\224\200\")[\[\033[01;37m\]\t$sq_color]\342\224\200[\[\033[01;37m\]\u@\h$sq_color]\n\342\224\224\342\224\200\342\224\200> \[\033[01;37m\]\W$sq_color $ \[\033[01;37m\]\\[\\033[0m\\] "
 
-unset sq_color
+
 
 EDITOR=emacs
 DEBEMAIL=bobby.martin@mail.wvu.edu
@@ -123,8 +118,8 @@ DEBFULLNAME="Bobby Martin"
 JAVA_HOME=/usr/lib/jvm/default-java
 
 alias shell='ssh -p 20110 bmartin4@shell.lcsee.wvu.edu'
-alias tnode='ssh -AX tnode001'
 alias lsa='ls -lisa'
-alias lds='ldapsearch -xLLL' 
-alias keys='sh /cloudhome/bmartin4/scripts/keys.sh'
 alias e='emacs -nw'
+alias emacs="emacs -nw"
+alias clean=' find `pwd` -iname "*~" -or -name "*#" |xargs rm -f'
+
