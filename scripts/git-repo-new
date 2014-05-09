@@ -1,0 +1,10 @@
+#! /bin/bash
+
+FOLDER=$1
+REPO=$2
+mkdir /home/git/remote/"$1"/"$2"
+cd /home/git/remote/"$1"/"$2"
+git --bare init
+chmod g+s /home/git/remote/"$1"/"$2"
+chmod g+w /home/git/remote/"$1"/"$2"
+
